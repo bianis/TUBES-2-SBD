@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TUBES2SBD",
+            "request": "launch",
+            "mainClass": "tubes.pkg2.sbd.TUBES2SBD",
+            "projectName": "src_7b3c5a44"
+        }
+    ]
+}

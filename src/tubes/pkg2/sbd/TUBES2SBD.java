@@ -17,21 +17,20 @@ public class TUBES2SBD {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         int pilihan;
         
         Scanner input = new Scanner(System.in);
         
-        System.out.println("[1] Tampilkan BFR & Fan-out Ratio");
-        System.out.println("[2] Total Blok Data + Index");
-        System.out.println("[3] Jumlah Box yang diakses untuk Pencarian Rekord");
-        System.out.println("[4] QEP dan Cost");
-        System.out.println("[5] File Shared Pool");
-        System.out.print("OPTION : ");
-        pilihan = input.nextInt();
-        
+        System.out.println(">> Main Menu");
+        System.out.println("   1. Print BFR & Fan-out Ratio for each Table");
+        System.out.println("   2. Print Total data blocks & Index blocks for each Table");
+        System.out.println("   3. Calculate Total Block of Finding Record");
+        System.out.println("   4. Create QEP and calculate Query cost");
+        System.out.println("   5. Print the content of Shared Pool file");
+        System.out.print(">> Insert menu: ");
+        pilihan = input.nextInt();        
         if (pilihan == 1){
-
+            System.out.println("   Coba 1");
         } else if (pilihan == 2){
 
         } else if (pilihan == 3){
