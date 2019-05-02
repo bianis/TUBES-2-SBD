@@ -1,0 +1,3 @@
+pembeli;id_pembeli;nama;alamat;
+parang;kode;nama_barang;harga;
+pembelian;id_beli;jumlah_barang;total_harga;
