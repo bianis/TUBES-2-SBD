@@ -11,8 +11,6 @@ package process;
  */
 public class BfrFr {
     
-    String kendaraan = "";
-    
     public void tesuto(){
         System.out.println("yeay berhasil masuk");
     };

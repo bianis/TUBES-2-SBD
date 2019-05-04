@@ -5,11 +5,14 @@
  */
 package process;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
- * @author user
+ * @author Bian
  */
 public class TUBES2SBD {
 
@@ -19,8 +22,25 @@ public class TUBES2SBD {
     public static void main(String[] args) {
         int menu = 1;
         
+//        Semua inisialisasi
+        String dictionary = "src/data/DataDictionary.txt";
         Scanner input = new Scanner(System.in);
         BfrFr op1 = new BfrFr();
+        String[] tableSemua = new String[100];
+        String line = "";
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(dictionary))) {
+            while (((line = br.readLine()) != null) && ((line = br.readLine()) != "#")) {
+                System.out.println(line);
+                System.out.println("");
+                tableSemua = line.split(";");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
         
         while ((menu >= 1) && (menu <= 5)) {
             System.out.println("");
