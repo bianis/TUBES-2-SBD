@@ -35,12 +35,14 @@ public class TUBES2SBD {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws FileNotFoundException {
-        int menu = 1;
 
-//        Semua inisialisasi
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+//      Semua inisialisasi
+        int menu = 1;
         Scanner input = new Scanner(System.in);
-        BfrFr op1 = new BfrFr();
+        ProcessOneTwo op1 = new ProcessOneTwo();
 
         while ((menu >= 1) && (menu <= 5)) {
             System.out.println("");
@@ -55,7 +57,7 @@ public class TUBES2SBD {
             if (menu == 1) {
                 op1.BFRandFR();
             } else if (menu == 2) {
-
+                op1.dataAndIndexBlocks();
             } else if (menu == 3) {
 
             } else if (menu == 4) {
@@ -64,6 +66,6 @@ public class TUBES2SBD {
 
             }
         }
-}
+    }
 
 }
