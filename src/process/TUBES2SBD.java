@@ -6,9 +6,25 @@
 package process;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,29 +35,13 @@ public class TUBES2SBD {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         int menu = 1;
-        
+
 //        Semua inisialisasi
-        String dictionary = "src/data/DataDictionary.txt";
         Scanner input = new Scanner(System.in);
         BfrFr op1 = new BfrFr();
-        String[] tableSemua = new String[100];
-        String line = "";
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(dictionary))) {
-            while (((line = br.readLine()) != null) && ((line = br.readLine()) != "#")) {
-                System.out.println(line);
-                System.out.println("");
-                tableSemua = line.split(";");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        
-        
-        
+
         while ((menu >= 1) && (menu <= 5)) {
             System.out.println("");
             System.out.println(">> Main Menu");
@@ -51,20 +51,19 @@ public class TUBES2SBD {
             System.out.println("   4. Create QEP and calculate Query cost");
             System.out.println("   5. Print the content of Shared Pool file");
             System.out.print(">> Insert menu: ");
-            menu = input.nextInt();        
-            if (menu == 1){
-                op1.tesuto();
-            } else if (menu == 2){
+            menu = input.nextInt();
+            if (menu == 1) {
+                op1.BFRandFR();
+            } else if (menu == 2) {
 
-            } else if (menu == 3){
+            } else if (menu == 3) {
 
-            } else if (menu == 4){
+            } else if (menu == 4) {
 
-            } else if (menu == 5){
+            } else if (menu == 5) {
 
             }
         }
-        
-    }
-    
+}
+
 }
