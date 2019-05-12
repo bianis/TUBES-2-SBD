@@ -18,15 +18,16 @@ import java.util.Scanner;
  */
 public class ProcessOneTwo {
 
-    public void tampil1(int B, int P, int R, int V, String[] tabel) {
-        System.out.println("BFR " + tabel[0] + " : " + hitungBfr(B, R));;
-        System.out.println("Fan Out Ratio " + tabel[0] + " : " + hitungFr(B, P, V));
+    public void tampil1(int B, int P, int R, int V, List<String> tabel) {
+        System.out.print("b="+B); System.out.print("r="+R); System.out.println("p="+P);
+        System.out.println("BFR " + tabel.get(0) + " : " + hitungBfr(B, R));;
+        System.out.println("Fan Out Ratio " + tabel.get(0) + " : " + hitungFr(B, P, V));
         System.out.println("");
     }
 
-    public void tampil2(int B, int P, int R, int V, int n, String[] tabel) {
-        System.out.println("Tabel Data " + tabel[0] + " : " + countBlockData(B, R, n));
-        System.out.println("Indeks " + tabel[0] + " : " + countBlockIndex(B, P, n, V));
+    public void tampil2(int B, int P, int R, int V, int n, List<String> tabel) {
+        System.out.println("Tabel Data " + tabel.get(0) + " : " + countBlockData(B, R, n));
+        System.out.println("Indeks " + tabel.get(0) + " : " + countBlockIndex(B, P, n, V));
         System.out.println("");
     }
 
