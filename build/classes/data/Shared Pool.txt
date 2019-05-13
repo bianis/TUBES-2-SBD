@@ -1,0 +1,28 @@
+select id_pembeli from Pembeli where id_pembeli = 98765;
+PROJECTION id_pembeli, -- on the fly
+SELECTION id_pembeli = 98765 -- A2
+dokter
+Cost: 4.0 Blocks
+
+
+select kode from Barang where kode = 123;
+PROJECTION kode, -- on the fly
+SELECTION kode=123 -- A2
+Barang
+Cost: 5.0 Blocks
+
+
+select id_pembeli from Pembeli where id_pembeli = 123;
+PROJECTION id_pembeli, -- on the fly
+SELECTION id_pembeli=123 -- A2
+Pembeli
+Cost: 5.0 Blocks
+
+
+
+select kode from Pembelian join Barang using (kode);
+PROJECTION -- on the fly
+JOIN Pembelian.id_beli = Barang.id_beli -- BNLJ
+Barang    Pembelian    
+Cost: 208.0 Blocks
+

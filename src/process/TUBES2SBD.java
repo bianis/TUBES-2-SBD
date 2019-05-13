@@ -134,7 +134,7 @@ public class TUBES2SBD {
                 op3.SearchRecord(data);
             } else if (menu == 4) {
                 Scanner sc = new Scanner(System.in);
-                System.out.println("Query: ");   
+                System.out.print("-- Query: ");   
                 in = sc.nextLine();
                 String[] syntax = in.split(" ");
                 List<String> initials = new ArrayList();
@@ -146,6 +146,8 @@ public class TUBES2SBD {
                 }
             } else if (menu == 5) {
 
+            }else{
+                System.out.println("Invalid input");
             }
         }
     }   

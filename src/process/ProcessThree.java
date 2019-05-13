@@ -21,10 +21,11 @@ public class ProcessThree {
     
     public static void SearchRecord(List<List<String>> dataTable) { //belom dikoreksi rumusnya, menu nomer 3
         Scanner sc = new Scanner(System.in);
-        System.out.println(">> Cari rekord ke- :");
+        System.out.print("-- Cari Rekord ke- : ");
         int cari = sc.nextInt();
-        System.out.println(">> Nama tabel :");
+        System.out.print("-- Nama Tabel      : ");
         String tabel = sc.next();
+        boolean benar = false; //buat cek inputan
 //        if (tabel.matches("[a-zA-Z_]")) {
         for (int i = 1; i < dataTable.size(); i++) {
             if (tabel.equalsIgnoreCase(dataTable.get(i).get(0))) {
@@ -36,12 +37,15 @@ public class ProcessThree {
                 // ceil(cari/bfr)
                 double notIndexed = Math.ceil(cari / BFR);
                 double indexed = Math.ceil(notIndexed / FOR) + 1; // banyak blok yang diakses lewat index (jumlah blok di main/fan-out)
-
-                System.out.println("Menggunakan indeks, jumlah blok yang diakses: " + indexed);
-                System.out.println("Tanpa indeks, jumlah blok yang diakses: " + notIndexed);
+                System.out.println("Menggunakan indeks, jumlah blok yang diakses : " + indexed);
+                System.out.println("Tanpa indeks, jumlah blok yang diakses       : " + notIndexed);
+                benar = true;
                 break;
             }
         }
-           System.out.println("Tipe data inputan tidak sesuai");
+        if (benar == false){
+         System.out.println("Invalid input");  
+        }
+           
     }
 }
