@@ -22,8 +22,8 @@ import java.util.List;
  */
 public class ProcessFour {
        
-    static List<List<String>> usedData = new ArrayList();
-    static List<List<String>> dataQEP = new ArrayList();
+    List<List<String>> usedData = new ArrayList();
+    List<List<String>> dataQEP = new ArrayList();
 
     
     public boolean parserQuery(String[] textquery, List<String> initials, List<List<String>> dataTable) throws IOException {
@@ -41,7 +41,7 @@ public class ProcessFour {
                         boolean whereState = false;
                         boolean join = false;
                         boolean where = false;
-                        while (i < textquery.length && syntax) { //loop kata sepanjang i
+                        while (i < textquery.length && syntax){  //loop kata sepanjang i
                             if (!textquery[i].equalsIgnoreCase("join") && !textquery[i].equalsIgnoreCase("on") && !textquery[i].equalsIgnoreCase("using") && !textquery[i].equalsIgnoreCase("where")) { //cek kalo bukan join atau on
                                 if (whereState) {
                                     String[] kataWhere = Arrays.copyOfRange(textquery, i, textquery.length);
@@ -61,16 +61,16 @@ public class ProcessFour {
                                 }
                             } else if (textquery[i].equalsIgnoreCase("join")) { //jika kata indeks ke-i adalah join tanpa peduli uppercase atau lowercase
                                 if (initialsCheck == true) { //jika ditemukan inisial tabel setelah nama tabel
-                                    initials.add(" "); //tambahkan whitespace di initial
+                                    initials.add(" "); //tambahkan space di initial
                                     initialsCheck = false; //kembalikan initial check ke value semula
                                 }
                                 if (joinState == true) { //jika hanya ada join tanpa on maka joinState true
                                     syntax = false; //karna tidak ada "on" maka query dianggap salah
-                                }
+                                } 
                                 joinState = true;
                                 tempSyntax = false; //jika tidak ditemukan join maka tempSyntax false
                                 join = true;
-                            } else if (textquery[i].equalsIgnoreCase("on")) { //jika kata ke-i merupakan "on"
+                              } else if (textquery[i].equalsIgnoreCase("on")) { //jika kata ke-i merupakan "on"
                                 if (initialsCheck == true) { //jika ditemukan inisial tabel setelah nama tabel
                                     initials.add(" "); //tambahkan whitespace ke list initial
                                     initialsCheck = false; //kembalikan ke semula
@@ -145,7 +145,7 @@ public class ProcessFour {
         return false;
     }
 
-    static boolean parserUsing(String kata, List<List<String>> dataTable, List<String> initial) {
+    public boolean parserUsing(String kata, List<List<String>> dataTable, List<String> initial) {
         kata = kata.substring(1, kata.length() - 1);
         int jmlcheck = 0;
 
@@ -458,7 +458,7 @@ public class ProcessFour {
         System.out.println("");
         for (int i = 0; i < in.size(); i = i + 2) {
             System.out.println("Tabel : " + in.get(i)); //print nama tabel
-            System.out.print("Kolom: ");
+            System.out.print("Kolom : ");
             for (int j = 0; j < usedData.get(i/2 + 1).size(); j++) {
                 System.out.print(usedData.get(i/2 + 1).get(j) + ", "); //print nama kolom tabel
             }
