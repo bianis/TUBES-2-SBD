@@ -50,7 +50,7 @@ public class ProcessThreeFive {
     }
 //     ProcessFive
     public static void readSharedPoolFile() throws IOException {
-        File file = new File("src/data/Shared Pool.tx");
+        File file = new File("src/data/Shared Pool.txt");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st = br.readLine();
         while ((st = br.readLine()) != null) {
