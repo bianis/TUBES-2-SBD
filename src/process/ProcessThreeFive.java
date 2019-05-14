@@ -48,4 +48,13 @@ public class ProcessThree {
         }
            
     }
+//     ProcessFive
+    public static void readSharedPoolFile() throws IOException {
+        File file = new File("sharedPool.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String st = br.readLine();
+        while ((st = br.readLine()) != null) {
+            System.out.println(st);
+        }
+    }
 }
