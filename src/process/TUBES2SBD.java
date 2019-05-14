@@ -27,7 +27,7 @@ public class TUBES2SBD {
         ProcessOneTwo op12 = new ProcessOneTwo();
         ProcessReadFile opRF = new ProcessReadFile();
         ProcessFour op4 = new ProcessFour();
-        ProcessThree op3 = new ProcessThree();
+        ProcessThreeFive op35 = new ProcessThreeFive();
         
         
         // Semua inisialisasi
@@ -131,7 +131,7 @@ public class TUBES2SBD {
                 op12.tampil2(B, P, Rb, Vb, nb, dataBarang);
                 op12.tampil2(B, P, Rpn, Vpn, npn, dataPembelian);
             } else if (menu == 3) { 
-                op3.SearchRecord(data);
+                op35.SearchRecord(data);
             } else if (menu == 4) {
                 Scanner sc = new Scanner(System.in);
                 System.out.print("-- Query: ");   
@@ -145,7 +145,7 @@ public class TUBES2SBD {
                     System.out.println("Syntax Error");
                 }
             } else if (menu == 5) {
-
+                    op35.readSharedPoolFile();
             }else{
                 System.out.println("Invalid input");
             }
