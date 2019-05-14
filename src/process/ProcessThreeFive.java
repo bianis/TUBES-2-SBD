@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author anasya
  */
-public class ProcessThree {
+public class ProcessThreeFive {
     
     
     public static void SearchRecord(List<List<String>> dataTable) { //belom dikoreksi rumusnya, menu nomer 3
