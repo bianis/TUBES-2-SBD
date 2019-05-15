@@ -26,8 +26,8 @@ public class ProcessOneTwo {
     }
 
     public void tampil2(int B, int P, int R, int V, int n, List<String> tabel) {
-        System.out.println("Tabel Data " + tabel.get(0) + " : " + countBlockData(B, R, n));
-        System.out.println("Indeks " + tabel.get(0) + "     : " + countBlockIndex(B, P, n, V));
+        System.out.println("Tabel Data " + tabel.get(0) + " : " + countBlockData(B, R, n) + " blok");
+        System.out.println("Indeks " + tabel.get(0) + "     : " + countBlockIndex(B, P, n, V) + " blok");
         System.out.println("");
     }
 
@@ -36,14 +36,14 @@ public class ProcessOneTwo {
     }
 
     public double hitungFr(int B, int P, int v) {
-        return Math.ceil(B / (v + P));
+        return Math.floor(B / (v + P));
     }
 
     public double countBlockData(int B, int R, int n) {
-        return Math.floor(n / hitungBfr(B, R));
+        return Math.ceil(n / hitungBfr(B, R));
     }
 
     public double countBlockIndex(int B, int P, int n, int v) {
-        return Math.floor(n / hitungFr(B, P, v));
+        return Math.ceil(n / hitungFr(B, P, v));
     }
 }
